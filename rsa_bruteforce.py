@@ -37,7 +37,7 @@ rng_0 = int(input("loop range start: "))
 rng_1 = int(input("loop range finish: "))
 target = input("target string: ")
 # m**e%n=c
-# m**e = i*c+n
+# m**e = i*n+c
 # m = (i*c+n)**(1/3)
 for i in range(rng_0,rng_1):
     m = x_root(i * n + c,e)
