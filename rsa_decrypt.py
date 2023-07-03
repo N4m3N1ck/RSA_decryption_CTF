@@ -1,11 +1,10 @@
 from math import gcd
-from sympy import mod_inverse
 
 def calculate_private_key(n, p, q, e):
     phi = (p - 1) * (q - 1)
     if gcd(e, phi) != 1:
         raise ValueError("e and phi(n) are not coprime. Choose a different value for e.")
-    d = mod_inverse(e, phi)
+    d = pow(e, -1, phi)
     return d
 
 # Example usage
