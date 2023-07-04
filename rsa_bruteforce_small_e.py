@@ -36,16 +36,19 @@ c = int(input("c: "))
 e = int(input("e: "))
 rng_0 = int(input("loop range start: "))
 rng_1 = int(input("loop range finish: "))
-target = input("target string: ")
+target = input("target string(leave empty if you need target number in m): ")
+target_n = 0
+if target=="":
+    target_n = int(input("target int in m: "))
 # m**e%n=c
 # m**e = i*n+c
-# m = (i*c+n)**(1/3)
+# m = (i*n+c)**(1/3)
 #Looping through all possible values of i and checking if the message contains the target string
 for i in range(rng_0,rng_1):
     m = x_root(i * n + c,e)
-    if m % 1 == 0:
-        s = str(to_base_256(m))
-        print(f"number: {i}\nmessage: {m}\nstring: {s}")
-        if target in s:
-            break
-
+    s = str(to_base_256(m))
+    print(f"number: {i}\nmessage: {m}\nstring(base 256): {s}")
+    if not target and str(target_n) in str(m):
+        break
+    if target and target in s:
+        break
