@@ -1,3 +1,4 @@
+#Binary search algorithm to calculate root with the base of x of a large number
 def x_root(n,x):
     left = 0
     right = n
@@ -11,7 +12,7 @@ def x_root(n,x):
             left = mid + 1
     return -1
 
-
+#Converts int message m into text
 def to_base_256(i):
     encoded_integer = i
 
@@ -39,6 +40,7 @@ target = input("target string: ")
 # m**e%n=c
 # m**e = i*n+c
 # m = (i*c+n)**(1/3)
+#Looping through all possible values of i and checking if the message contains the target string
 for i in range(rng_0,rng_1):
     m = x_root(i * n + c,e)
     if m % 1 == 0:
