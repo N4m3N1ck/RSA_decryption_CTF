@@ -12,6 +12,7 @@ Simple Python scripts to help you to decrypt RSA-encrypted data. The repository 
 1. https://ctf101.org/cryptography/what-is-rsa/
 2. https://www.youtube.com/watch?v=4zahvcJ9glg&ab_channel=EddieWoo, https://www.youtube.com/watch?v=oOcTVTpUsPQ&ab_channel=EddieWoo
 3. http://www.factordb.com/ will help to exploit Weak public key factorization
+4. https://crypto.stackexchange.com/questions/71/how-can-i-generate-large-prime-numbers-for-rsa
 # Practise:
 1. The repository will provide a Python script for solving problems, containing problems for practising with different RSA vulnerability scenarios.
 2. https://picoctf.org/
