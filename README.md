@@ -1,12 +1,12 @@
 # RSA decryption
 Simple Python scripts to help you to decrypt RSA-encrypted data. The repository provides multiple Python scripts which target different weaknesses in RSA encryption. The repository also provides RSA challenges to practise on.
 # Attacks:
-1. rsa_decrypt_with_n_p_q_e.py
+1. decrypt_with_n_p_q_e.py
   A simple Python script which will decrypt RSA data if you know n, p, q and e values.
   To find p and q values you can try visiting http://www.factordb.com/ and entering n. If n is small you can attempt a brute force attack to find p and q values.
-2. find_p_q.py
+3. bruteforce_small_p_q.py
    A simple Python script to find p and q values up to around 100,000,000 (depending on the computing power)
-3. rsa_bruteforce_small_e.py
+4. bruteforce_small_e.py
    A simple Python script which will bruteforce RSA for small e values and m^e is barely larger than n.
 # Helpful resources:
 1. https://ctf101.org/cryptography/what-is-rsa/
