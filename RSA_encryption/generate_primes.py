@@ -2,7 +2,8 @@ import random
 from math import gcd
 
 length = int(input("Enter the desired length of the number: "))
-tests_m = int(input("Enter the amount of miller-rabin tests (Increase the amount for higher chance of the number being prime): "))
+tests_f = int(input("Enter the amount of fermat's tests: "))
+tests_m = int(input("Enter the amount of miller-rabin tests: "))
 
 
 def generate_random_number_of_length(n):
@@ -13,14 +14,15 @@ def generate_random_number_of_length(n):
     return int(s)
 
 
-def fermat_test(num):
+def fermat_test(num, count):
     if n % 2 == 0 or n <= 1:
         return False
     if n <= 3:
         return True
-    a = random.randint(2, num - 1)
-    if pow(a, num - 1, num) != 1:
-        return False
+    for i in range(count):
+        a = random.randint(2, num - 1)
+        if pow(a, num - 1, num) != 1:
+            return False
     return True
 
 
@@ -61,7 +63,7 @@ def miller_rabin_test(num, tests):
 
 
 n = generate_random_number_of_length(length)
-while not (fermat_test(n) and miller_rabin_test(n, tests_m)):
+while not (fermat_test(n, tests_f) and miller_rabin_test(n, tests_m)):
     n = generate_random_number_of_length(length)
 print(f"Very likely to be prime: {n}")
 # print(prime_test_slow(n))
