@@ -1,7 +1,9 @@
 import random
 from math import gcd
 
-length = int(input("Enter the desired length of the number: "))
+
+length = int(input("Enter the desired length of the number (p): "))
+coprime = int(input("Enter the number (e) p-1 should be coprime with (Enter 1 to ignore): "))
 tests_m = int(input("Enter the amount of miller-rabin tests: "))
 
 
@@ -21,17 +23,6 @@ def fermat_test(num):
     a = random.randint(2, num - 1)
     if pow(a, num - 1, num) != 1:
         return False
-    return True
-
-
-def prime_test_slow(num):
-    if n % 2 == 0 or n <= 1:
-        return False
-    if n <= 3:
-        return True
-    for i in range(2, int(num ** (1 / 2)) + 1):
-        if num % i == 0:
-            return False
     return True
 
 
@@ -61,7 +52,6 @@ def miller_rabin_test(num, tests):
 
 
 n = generate_random_number_of_length(length)
-while not (fermat_test(n) and miller_rabin_test(n, tests_m)):
+while not (fermat_test(n) and miller_rabin_test(n, tests_m) and gcd(coprime, n-1) == 1):
     n = generate_random_number_of_length(length)
 print(f"Very likely to be prime: {n}")
-# print(prime_test_slow(n))
