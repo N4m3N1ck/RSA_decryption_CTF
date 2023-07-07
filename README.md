@@ -8,6 +8,11 @@ Simple Python scripts to help you to decrypt RSA-encrypted data. The repository 
    A simple Python script to find p and q values up to around 100,000,000 (depending on the computing power)
 4. bruteforce_small_e.py
    A simple Python script which will bruteforce RSA for small e values and m^e is barely larger than n.
+# RSA encryption:
+1. generate_primes.py
+  A simple Python script to generate a random prime number (p) of length n, for which p-1 is coprime to the number e of your choice.
+2. rsa_encryption.py
+   Generates public and private keys from p,q and e you provide from the generate primes script.
 # Helpful resources:
 1. https://ctf101.org/cryptography/what-is-rsa/
 2. https://www.youtube.com/watch?v=4zahvcJ9glg&ab_channel=EddieWoo, https://www.youtube.com/watch?v=oOcTVTpUsPQ&ab_channel=EddieWoo
